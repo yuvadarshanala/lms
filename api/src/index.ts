@@ -12,11 +12,11 @@ const PORT: number = parseInt(getConfig("PORT") as string, 10);
 async function main() {
   // Build the database connection string
   console.log("Building database connection string");
-  const dbHost = getConfig("DB_HOST") || "localhost";
+  const dbHost = getConfig("DB_HOST") || "local-db";
   const dbPort = getConfig("DB_PORT") || 5432;
   const dbName = getConfig("DB_NAME") || "postgres";
   const dbUser = getConfig("DB_USER") || "postgres";
-  const dbPassword = getConfig("DB_PASSWORD") || "password";
+  const dbPassword = getConfig("DB_PASSWORD") || "itjustworks";
   const dbConnectionString = `postgres://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`;
   // Set DATABASE_URL environment variable
   process.env.DATABASE_URL = dbConnectionString;
